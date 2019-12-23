@@ -64,12 +64,12 @@ public class JdbcTemplateAdminServiceImpl implements JdbcTemplateAdminService {
                 int total = rs.getInt("total");
                 System.out.println(total);
             }
-            String sql2 = "select Name from Admin where id=190103";
+            String sql2 = "select * from Admin where id=190103";
             ResultSet rs2 = statement.executeQuery(sql2);
             Admin admin2 = null;
             while (rs2.next()) {
-                int rowNum = rs.getRow();
-                admin2 = getAdminMapper().mapRow(rs, rowNum);
+                int rowNum = rs2.getRow();
+                admin2 = getAdminMapper().mapRow(rs2, rowNum);
             }
             return admin2;
         });
@@ -86,13 +86,13 @@ public class JdbcTemplateAdminServiceImpl implements JdbcTemplateAdminService {
                 int total = rs.getInt("total");
                 System.out.println(total);
             }
-            String sql2 = "select Name from Admin where id=190103";
+            String sql2 = "select * from Admin where id=190103";
             PreparedStatement preparedStatement2  = conn.prepareStatement(sql2);
             ResultSet rs2 = preparedStatement2.executeQuery();
             Admin admin2 = null;
             while (rs2.next()) {
-                int rowNum = rs.getRow();
-                admin2 = getAdminMapper().mapRow(rs, rowNum);
+                int rowNum = rs2.getRow();
+                admin2 = getAdminMapper().mapRow(rs2, rowNum);
             }
             return admin2;
         });

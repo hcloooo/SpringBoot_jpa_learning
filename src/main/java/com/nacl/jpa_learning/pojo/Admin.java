@@ -14,14 +14,14 @@ public class Admin{
         this.name = name;
         this.pwd = pwd;
         this.note = note;
-        State = state;
+        this.state = state;
     }
 
     public int id;
     public String name;
     public String pwd;
     public String note;
-    public int State;
+    public int state;
 
     public Admin() {
 
@@ -60,10 +60,8 @@ public class Admin{
     }
 
     public int getState() {
-        return State;
+        return state;
     }
 
-    public void setState(int state) {
-        State = state;
-    }
+    public void setState(int state) { this.state = state; }
 }
