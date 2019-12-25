@@ -3,11 +3,12 @@ package com.nacl.jpa_learning.pojo;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.naming.Name;
+import javax.persistence.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Entity
 public class Admin{
     public Admin(int id, String name, String pwd, String note, int state) {
         this.id = id;
@@ -16,7 +17,8 @@ public class Admin{
         this.note = note;
         this.state = state;
     }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public String name;
     public String pwd;
