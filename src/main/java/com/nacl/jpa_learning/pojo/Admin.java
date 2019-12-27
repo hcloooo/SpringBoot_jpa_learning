@@ -18,7 +18,6 @@ public class Admin{
         this.state = state;
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public String name;
     public String pwd;

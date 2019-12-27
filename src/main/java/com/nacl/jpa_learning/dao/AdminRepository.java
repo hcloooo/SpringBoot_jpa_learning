@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface AdminRepository extends JpaRepository<Admin,Integer> {
     Admin findAdminById(int id);
+    @Override
     List<Admin> findAll();
 }
